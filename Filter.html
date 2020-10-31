@@ -1,12 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="Filter.js"></script>
-    <link rel="stylesheet" href="Filter.Css">
-</head>
-<body>
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="Filter.js"></script>
+        <link rel="stylesheet" href="Filter.Css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="filters-container">
+                <div class="filter filter-direction">
+                    <div class="filter-title">
+                        DIRECTION
+                    </div>
+                    <div class="filter-values">
+                        <div class="value" id="exit">
+                            <span>Exit</span>
+                        </div>
+                        <div class="value" id="entry">
+                            <span>Entry</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter filter-tac">
+                    <div class="filter-title">
+                        TAC
+                    </div>
+                    <div class="filter-values">
+                        <div class="value" id="tac-total">
+                            <span>Total</span>
+                        </div>
+                        <div class="value" id="firm-fzk">
+                            <span>Firm FZK</span>
+                        </div>
+                        <div class="value" id="firm-bfzk">
+                            <span>Firm bFZK</span>
+                        </div>
+                        <div class="value" id="firm-dzk">
+                            <span>Firm DZK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter filter-booked">
+                    <div class="filter-title">
+                        BOOKED
+                    </div>
+                    <div class="filter-values-wrapper">
+                        <div class="checkbox-filter">
+                            <input type="checkbox" id="firm">
+                            <label for="firm">Firm</label>
+                        </div>
+                        <div class="filter-values">
+                            <div class="value">
+                                <span>Total</span>
+                            </div>
+                            <div class="value">
+                                <span>Split:</span>
+                                <div class="checkbox-filter">
+                                    <div class="checkbox-item">
+                                        <input class="custom-checkbox" type="checkbox">
+                                        <span class="dot"></span>
+                                    </div>
+                                    <label>Bla bla</label>
+                                </div>
+                                <div class="checkbox-filter">
+                                    <div class="checkbox-item">
+                                        <input class="custom-checkbox" type="checkbox">
+                                        <span class="dot"></span>
+                                    </div>
+                                    <label>Bla bla</label>
+                                </div>
+                                <div class="checkbox-filter">
+                                    <div class="checkbox-item">
+                                        <input class="custom-checkbox" type="checkbox">
+                                        <span class="dot"></span>
+                                    </div>
+                                    <label>Bla bla</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox-filter">
+                            <div class="checkbox-item">
+                                <input class="custom-checkbox" type="checkbox">
+                                <span class="dot"></span>
+                            </div>
+                            <label>Interuptible</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox-container">
+                <div class="checkbox-filter">
+                    <div class="checkbox-item">
+                        <input class="custom-checkbox" type="checkbox">
+                        <span class="dot"></span>
+                    </div>
+                    <label>Bla bla</label>
+                </div>
+                <div class="checkbox-filter">
+                    <div class="checkbox-item">
+                        <input class="custom-checkbox" type="checkbox">
+                        <span class="dot"></span>
+                    </div>
+                    <label>Bla bla Bla bla</label>
+                </div>
+                <div class="checkbox-filter">
+                    <div class="checkbox-item">
+                        <input class="custom-checkbox" type="checkbox">
+                        <span class="dot"></span>
+                    </div>
+                    <label>Bla bla Bla bla Bla bla</label>
+                </div>
+                <div class="checkbox-filter">
+                    <div class="checkbox-item">
+                        <input class="custom-checkbox" type="checkbox">
+                        <span class="dot"></span>
+                    </div>
+                    <label>Bla </label>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
