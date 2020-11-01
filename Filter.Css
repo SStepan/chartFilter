@@ -68,6 +68,12 @@ input[type="checkbox"] {
   background-color: #6BCCC6;
 }
 
+.disabled  .filter-values > .value {
+  border: 2px solid grey;
+  color: grey;
+  /* cursor: not-allowed; */
+}
+
 .checkbox-container > .checkbox-filter {
   margin-right: 25px;
 }
