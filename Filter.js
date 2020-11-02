@@ -70,9 +70,33 @@ $(document).ready(() => {
   }
   
   function changeFilterTac(event) {
+    let tacId = event.currentTarget.id;
+    let checkboxes = $('.filter-booked  .filter-values > .value input');
+
     filterTac.removeClass('active');
     $(event.currentTarget).addClass('active');
-    result.tac = event.currentTarget.id;
+    result.tac = tacId;
+    if (tacId !== 'tac-total') {
+      checkboxes.each((index, checkbox) => {
+        if (checkbox.id != tacId.replace('firm', 'booked')) {
+          $(checkbox).attr('disabled', 'disabled');
+          $(checkbox).prop('checked', false);
+          result.splitValue[checkbox.id.replace('firm', 'booked')] = false;
+        } else {
+          $(checkbox).prop('checked', true);
+          $(checkbox).removeAttr('disabled');
+          result.splitValue[checkbox.id.replace('firm', 'booked')] = true;
+        }
+      });
+    } else {
+      checkboxes.removeAttr('disabled');
+      checkboxes.prop("checked", true);
+      result.splitValue = {
+        ['booked-fzk']: true,
+        ['booked-bfzk']: true,
+        ['booked-dzk']: true
+      };
+    }
     console.log(result);
   }
   
@@ -90,9 +114,31 @@ $(document).ready(() => {
     let checkboxes = $('.filter-booked  .filter-values > .value input');
     result.firm = event.currentTarget.checked;
     if (!result.firm) {
+      checkboxes.prop("checked", false);
+      result.splitValue = {
+          ['booked-fzk']: false,
+          ['booked-bfzk']: false,
+          ['booked-dzk']: false
+      };
       checkboxes.attr('disabled', 'disabled');
     } else {
-      checkboxes.removeAttr('disabled');
+      if (result.tac === 'tac-total' && result.firm) {
+        checkboxes.removeAttr('disabled');
+        checkboxes.prop("checked", true);
+        result.splitValue = {
+            ['booked-fzk']: true,
+            ['booked-bfzk']: true,
+            ['booked-dzk']: true
+        };
+      } else {
+        checkboxes.each((index, el) => {
+          if (el.id === result.tac.replace('firm', 'booked')) {
+            $(el).removeAttr('disabled');
+            $(el).prop("checked", true);
+            result.splitValue[result.tac.replace('firm', 'booked')] = true;
+          }
+        });
+      }
     }
     console.log(result)
   }
